@@ -24,6 +24,7 @@ var models = [
     "FarmLandDiorama",
     "Hourglass",
     "Lantern",
+    "MaterialDucks",
     "MetalRoughSpheres",
     "NormalTangentTest",
     "PillowPlane",

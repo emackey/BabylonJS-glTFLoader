@@ -1,0 +1,501 @@
+{
+    "asset": {
+        "copyright": "Original duck mesh Copyright 2006 Sony Computer Entertainment Inc. Licensed under the SCEA Shared Source License, Version 1.0.  PBR Texturemaps by Ed Mackey, Copyright 2017 Analytical Graphics, Inc., provided under the same license.",
+        "generator": "COLLADA2GLTF, with several hand-edits",
+        "version": "2.0"
+    },
+    "scene": 0,
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "children": [
+                5,
+                4,
+                3,
+                2,
+                1
+            ],
+            "matrix": [
+                0.4, 0.0,  0.0, 0.0,
+                0.0, 0.0, -0.4, 0.0,
+                0.0, 0.4,  0.0, 0.0,
+                0.0, 0.0,  0.0, 1.0
+            ]
+        },
+        {
+            "mesh": 0,
+            "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                3.0,
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "mesh": 1,
+            "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                1.5,
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "mesh": 2,
+            "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                -3.0,
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "mesh": 3,
+            "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                -1.5,
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "mesh": 4,
+            "matrix": [
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        }
+    ],
+    "meshes": [
+        {
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 2,
+                        "TEXCOORD_0": 3
+                    },
+                    "indices": 0,
+                    "mode": 4,
+                    "material": 0
+                }
+            ],
+            "name": "DuckA"
+        },
+        {
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 2,
+                        "TEXCOORD_0": 3
+                    },
+                    "indices": 0,
+                    "mode": 4,
+                    "material": 1
+                }
+            ],
+            "name": "DuckB"
+        },
+        {
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 2,
+                        "TEXCOORD_0": 3
+                    },
+                    "indices": 0,
+                    "mode": 4,
+                    "material": 2
+                }
+            ],
+            "name": "DuckC"
+        },
+        {
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 2,
+                        "TEXCOORD_0": 3
+                    },
+                    "indices": 0,
+                    "mode": 4,
+                    "material": 3
+                }
+            ],
+            "name": "DuckD"
+        },
+        {
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 2,
+                        "TEXCOORD_0": 3
+                    },
+                    "indices": 0,
+                    "mode": 4,
+                    "material": 4
+                }
+            ],
+            "name": "DuckE"
+        }
+    ],
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "byteStride": 0,
+            "componentType": 5123,
+            "count": 12636,
+            "max": [
+                3030.0
+            ],
+            "min": [
+                0.0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "byteStride": 0,
+            "componentType": 5126,
+            "count": 3031,
+            "max": [
+                0.997165620326996,
+                0.9998540878295898,
+                0.9995906352996826
+            ],
+            "min": [
+                -0.9999513030052184,
+                -0.9986025094985962,
+                -1.0
+            ],
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 36372,
+            "byteStride": 0,
+            "componentType": 5126,
+            "count": 3031,
+            "max": [
+                0.9617990255355836,
+                0.6132819056510925,
+                1.639699935913086
+            ],
+            "min": [
+                -0.6929849982261658,
+                -0.5392521023750305,
+                0.09929370135068894
+            ],
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 72744,
+            "byteStride": 0,
+            "componentType": 5126,
+            "count": 3031,
+            "max": [
+                0.9889816045761108,
+                0.9889816641807556
+            ],
+            "min": [
+                0.011018330231308936,
+                0.012409567832946778
+            ],
+            "type": "VEC2"
+        }
+    ],
+    "materials": [
+        {
+            "pbrMetallicRoughness": {
+                "baseColorTexture": {
+                    "index": 0
+                },
+                "metallicRoughnessTexture": {
+                    "index": 2
+                }
+            },
+            "occlusionTexture": {
+                "index": 2
+            },
+            "normalTexture": {
+                "index": 1
+            }
+        },
+        {
+            "pbrMetallicRoughness": {
+                "baseColorTexture": {
+                    "index": 3
+                },
+                "metallicRoughnessTexture": {
+                    "index": 5
+                }
+            },
+            "occlusionTexture": {
+                "index": 5
+            },
+            "normalTexture": {
+                "index": 4
+            }
+        },
+        {
+            "pbrMetallicRoughness": {
+                "baseColorTexture": {
+                    "index": 6
+                },
+                "metallicRoughnessTexture": {
+                    "index": 8
+                }
+            },
+            "occlusionTexture": {
+                "index": 8
+            },
+            "normalTexture": {
+                "index": 7
+            }
+        },
+        {
+            "pbrMetallicRoughness": {
+                "baseColorTexture": {
+                    "index": 9
+                },
+                "metallicRoughnessTexture": {
+                    "index": 11
+                }
+            },
+            "occlusionTexture": {
+                "index": 11
+            },
+            "normalTexture": {
+                "index": 10
+            }
+        },
+        {
+            "pbrMetallicRoughness": {
+                "baseColorTexture": {
+                    "index": 12
+                },
+                "metallicRoughnessTexture": {
+                    "index": 14
+                }
+            },
+            "occlusionTexture": {
+                "index": 14
+            },
+            "normalTexture": {
+                "index": 13
+            }
+        }
+    ],
+    "textures": [
+        {
+            "sampler": 0,
+            "source": 0
+        },
+        {
+            "sampler": 0,
+            "source": 1
+        },
+        {
+            "sampler": 0,
+            "source": 2
+        },
+        {
+            "sampler": 0,
+            "source": 3
+        },
+        {
+            "sampler": 0,
+            "source": 4
+        },
+        {
+            "sampler": 0,
+            "source": 5
+        },
+        {
+            "sampler": 0,
+            "source": 6
+        },
+        {
+            "sampler": 0,
+            "source": 7
+        },
+        {
+            "sampler": 0,
+            "source": 8
+        },
+        {
+            "sampler": 0,
+            "source": 9
+        },
+        {
+            "sampler": 0,
+            "source": 10
+        },
+        {
+            "sampler": 0,
+            "source": 11
+        },
+        {
+            "sampler": 0,
+            "source": 12
+        },
+        {
+            "sampler": 0,
+            "source": 13
+        },
+        {
+            "sampler": 0,
+            "source": 14
+        }
+    ],
+    "images": [
+        {
+            "uri": "BakedDuck.png"
+        },
+        {
+            "uri": "MaterialDuck_BrushedIron_Normal.png"
+        },
+        {
+            "uri": "MaterialDuck_BrushedIron_OcclusionRoughnessMetallic.png"
+        },
+        {
+            "uri": "MaterialDuck_MarbleFineWhite_BaseColor.png"
+        },
+        {
+            "uri": "MaterialDuck_MarbleFineWhite_Normal.png"
+        },
+        {
+            "uri": "MaterialDuck_MarbleFineWhite_OcclusionRoughnessMetallic.png"
+        },
+        {
+            "uri": "MaterialDuck_OldBrass_BaseColor.png"
+        },
+        {
+            "uri": "MaterialDuck_OldBrass_Normal.png"
+        },
+        {
+            "uri": "MaterialDuck_OldBrass_OcclusionRoughnessMetallic.png"
+        },
+        {
+            "uri": "MaterialDuck_Metal2_BaseColor.png"
+        },
+        {
+            "uri": "MaterialDuck_Metal2_Normal.png"
+        },
+        {
+            "uri": "MaterialDuck_Metal2_OcclusionRoughnessMetallic.png"
+        },
+        {
+            "uri": "MaterialDuck_WoodBeech_BaseColor.png"
+        },
+        {
+            "uri": "MaterialDuck_WoodBeech_Normal.png"
+        },
+        {
+            "uri": "MaterialDuck_WoodBeech_OcclusionRoughnessMetallic.png"
+        }
+    ],
+    "samplers": [
+        {
+            "magFilter": 9729,
+            "minFilter": 9986,
+            "wrapS": 33071,
+            "wrapT": 33071
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 96992,
+            "byteLength": 25272,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 96992,
+            "target": 34962
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 122264,
+            "uri": "MaterialDucks0.bin"
+        }
+    ]
+}
