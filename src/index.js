@@ -7,7 +7,6 @@ var Options = function () {
     this.folder = "glTF";
     this.imageFormat = "png";
     this.environment = "country";
-    this.attribution = "";
     this.pointLight = false;
     this.pointLightAngle = 0;
     this.showNormals = false;
@@ -20,6 +19,7 @@ var models = [
     "Avocado",
     "BarramundiFish",
     "BoomBox",
+    "BoomBoxLOD",
     "Corset",
     "FarmLandDiorama",
     "Hourglass",
@@ -42,19 +42,21 @@ var folders = [
 
 var imageFormats = [
     "jpg",
-    "png"
+    "png",
+    "jpg-with-quantized-png"
 ];
 
 // maps to attribution for image files here per cc license guidelines
 // first element must match background name in gui menu
 var environments = {
-    "country": "http://www.openfootage.net/",
-    "wobblyBridge": "https://hdrihaven.com/bundle.php?b=free_bundle",
+    "none": "",
+    "blender": "http://adaptivesamples.com/2017/01/17/blender-institute-hdri/",
+    "country": "https://www.openfootage.net/hdri-360-saalfelden-austria/",
+    "ennis": "http://gl.ict.usc.edu/Data/HighResProbes/",
+    "garage": "https://hdrihaven.com/hdri.php?hdri=garage",
     "gray": "http://www.microsoft.com/",
-    "hill": "https://hdrihaven.com/bundle.php?b=free_bundle",
-    "woods": "https://hdrihaven.com/bundle.php?b=free_bundle",
-    "theater": "http://www.hdrlabs.com/",
-    "darkPark": "http://noemotionhdrs.net/"
+    "indoor": "https://hdrihaven.com/hdri.php?hdri=blinds",
+    "night": "https://www.openfootage.net/hdri-3-0-360-river-power-station/"
 };
 
 Options.Default = new Options();
@@ -63,7 +65,7 @@ var options = new Options();
 var scene = null;
 var model = null;
 var camera = null;
-var hdrTexture = null;
+var environmentTexture = null;
 var skybox = null;
 var light = null;
 var sphere = null;
@@ -109,7 +111,6 @@ function createScene() {
         gui.add(options, "folder", folders).onChange(updateModel);
         gui.add(options, "imageFormat", imageFormats).onChange(updateModel);
         gui.add(options, "environment", Object.keys(environments)).onChange(updateEnvironment);
-        gui.add(options, "attribution").listen();
         gui.add(options, "pointLight").onChange(updateLight);
         gui.add(options, "pointLightAngle", 0, 360, 0.01).onChange(updateLightPosition);
         gui.add(options, "showNormals").onChange(updateLines);
@@ -121,19 +122,10 @@ function createScene() {
     camera = new BABYLON.ArcRotateCamera("camera", 4.712, 1.571, 2, BABYLON.Vector3.Zero(), scene);
     camera.attachControl(scene.getEngine().getRenderingCanvas());
     camera.minZ = 0.1;
-    camera.maxZ = 100;
+    camera.maxZ = 1000;
     camera.lowerRadiusLimit = 0.1;
     camera.upperRadiusLimit = 5;
     camera.wheelPrecision = 100;
-
-    skybox = BABYLON.Mesh.CreateBox("hdrSkyBox", 100, scene);
-    skybox.material = new BABYLON.PBRMaterial("skyBox", scene);
-    skybox.material.backFaceCulling = false;
-    skybox.material.microSurface = 1.0;
-    skybox.material.cameraExposure = 0.6;
-    skybox.material.cameraContrast = 1.6;
-    skybox.material.disableLighting = true;
-    skybox.infiniteDistance = true;
 
     updateEnvironment();
     updateModel();
@@ -144,38 +136,36 @@ function createScene() {
 }
 
 function updateEnvironment() {
-    options.attribution = environments[options.environment] || "";
+    var attributionElement = document.getElementById("attribution");
+    if (attributionElement) {
+        var attribution = environments[options.environment];
+        attributionElement.innerText = attribution;
+        document.getElementById("attributionLink").href = attribution;
+    }
 
     updateLink();
 
-    if (hdrTexture) {
-        hdrTexture.dispose();
+    if (scene.environmentTexture) {
+        scene.environmentTexture.dispose();
+        scene.environmentTexture = null;
     }
 
-    hdrTexture = new BABYLON.HDRCubeTexture("src/images/" + options.environment + ".babylon.hdr", scene);
-
-    if (skybox.material.reflectionTexture) {
+    if (skybox) {
         skybox.material.reflectionTexture.dispose();
     }
 
-    skybox.material.reflectionTexture = hdrTexture.clone();
-    skybox.material.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
+    if (options.environment === "none") {
+        return;
+    }
 
-    updateModelReflectionTextures();
-}
+    scene.environmentTexture = BABYLON.CubeTexture.CreateFromPrefilteredData("src/images/" + options.environment + "SpecularHDR.dds", scene);
 
-function updateModelReflectionTextures() {
-    if (model) {
-        model.getChildMeshes().forEach(function (mesh) {
-            var material = mesh.material;
-            if (material instanceof BABYLON.MultiMaterial) {
-                material.subMaterials.forEach(function (subMaterial) {
-                    if (subMaterial instanceof BABYLON.PBRMaterial) {
-                        subMaterial.reflectionTexture = hdrTexture;
-                    }
-                });
-            }
-        });
+    if (skybox) {
+        skybox.material.reflectionTexture = scene.environmentTexture.clone();
+        skybox.material.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
+    }
+    else {
+        skybox = scene.createDefaultSkybox(null, true);
     }
 }
 
@@ -211,7 +201,6 @@ function updateModel() {
         model.scaling.scaleInPlace(oneOverLength);
         model.position.subtractInPlace(center.scale(oneOverLength));
 
-        updateModelReflectionTextures();
         updateLines();
     }, null, function (newScene) {
         alert("Model '" + options.model + "' failed to load");
@@ -239,8 +228,9 @@ function updateLight() {
 
     if (!light) {
         light = new BABYLON.PointLight("light", BABYLON.Vector3.Zero, scene);
+        light.intensity = 3;
         sphere = BABYLON.Mesh.CreateSphere("sphere", 16, 0.05, scene);
-        sphere.material = new BABYLON.PBRMaterial("sphere", scene);
+        sphere.material = new BABYLON.StandardMaterial("sphere", scene);
     }
 
     light.setEnabled(options.pointLight);

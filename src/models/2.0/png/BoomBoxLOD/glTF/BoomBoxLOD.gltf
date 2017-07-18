@@ -1,0 +1,294 @@
+{
+    "asset": {
+        "version": "2.0"
+    },
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 18108,
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 3575,
+            "type": "VEC3",
+            "max": [
+                0.009921154007315636,
+                0.00977163016796112,
+                0.010076245293021202
+            ],
+            "min": [
+                -0.009921154007315636,
+                -0.00977163016796112,
+                -0.010076245293021202
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 3575,
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 3575,
+            "type": "VEC2"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteLength": 36216,
+            "byteOffset": 0,
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 42900,
+            "byteOffset": 36216,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 42900,
+            "byteOffset": 79116,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 28600,
+            "byteOffset": 122016,
+            "target": 34962
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 150616,
+            "uri": "BoomBoxLOD.bin"
+        }
+    ],
+    "images": [
+        {
+            "uri": "BoomBox_baseColor_0.png"
+        },
+        {
+            "uri": "BoomBox_occlusionRoughnessMetallic_0.png"
+        },
+        {
+            "uri": "BoomBox_normal_0.png"
+        },
+        {
+            "uri": "BoomBox_emissive_0.png"
+        },
+        {
+            "uri": "BoomBox_baseColor_1.png"
+        },
+        {
+            "uri": "BoomBox_occlusionRoughnessMetallic_1.png"
+        },
+        {
+            "uri": "BoomBox_normal_1.png"
+        },
+        {
+            "uri": "BoomBox_emissive_1.png"
+        },
+        {
+            "uri": "BoomBox_baseColor_2.png"
+        },
+        {
+            "uri": "BoomBox_occlusionRoughnessMetallic_2.png"
+        },
+        {
+            "uri": "BoomBox_normal_2.png"
+        },
+        {
+            "uri": "BoomBox_emissive_2.png"
+        }
+    ],
+    "materials": [
+        {
+            "name": "High_LOD",
+            "pbrMetallicRoughness": {
+                "baseColorTexture": {
+                    "index": 0
+                },
+                "metallicRoughnessTexture": {
+                    "index": 1
+                }
+            },
+            "normalTexture": {
+                "index": 2
+            },
+            "occlusionTexture": {
+                "index": 1
+            },
+            "emissiveFactor": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "emissiveTexture": {
+                "index": 3
+            },
+            "extensions": {
+                "MSFT_lod": {
+                    "ids": [
+                        1,
+                        2
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Medium_LOD",
+            "pbrMetallicRoughness": {
+                "baseColorTexture": {
+                    "index": 4
+                },
+                "metallicRoughnessTexture": {
+                    "index": 5
+                }
+            },
+            "normalTexture": {
+                "index": 6
+            },
+            "occlusionTexture": {
+                "index": 5
+            },
+            "emissiveFactor": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "emissiveTexture": {
+                "index": 7
+            }
+        },
+        {
+            "name": "Low_LOD",
+            "pbrMetallicRoughness": {
+                "baseColorTexture": {
+                    "index": 8
+                },
+                "metallicRoughnessTexture": {
+                    "index": 9
+                }
+            },
+            "normalTexture": {
+                "index": 10
+            },
+            "occlusionTexture": {
+                "index": 9
+            },
+            "emissiveFactor": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "emissiveTexture": {
+                "index": 11
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "mesh",
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 2,
+                        "POSITION": 1,
+                        "TEXCOORD_0": 3
+                    },
+                    "indices": 0,
+                    "material": 0,
+                    "mode": 4
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "mesh": 0
+        },
+        {
+            "name": "root",
+            "children": [
+                0
+            ]
+        }
+    ],
+    "samplers": [
+        {
+            "minFilter": 9985
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                1
+            ]
+        }
+    ],
+    "scene": 0,
+    "textures": [
+        {
+            "sampler": 0,
+            "source": 0
+        },
+        {
+            "sampler": 0,
+            "source": 1
+        },
+        {
+            "sampler": 0,
+            "source": 2
+        },
+        {
+            "sampler": 0,
+            "source": 3
+        },
+        {
+            "sampler": 0,
+            "source": 4
+        },
+        {
+            "sampler": 0,
+            "source": 5
+        },
+        {
+            "sampler": 0,
+            "source": 6
+        },
+        {
+            "sampler": 0,
+            "source": 7
+        },
+        {
+            "sampler": 0,
+            "source": 8
+        },
+        {
+            "sampler": 0,
+            "source": 9
+        },
+        {
+            "sampler": 0,
+            "source": 10
+        },
+        {
+            "sampler": 0,
+            "source": 11
+        }
+    ],
+    "extensionsUsed": [
+        "MSFT_lod"
+    ]
+}
