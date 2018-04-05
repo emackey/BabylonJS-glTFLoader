@@ -22,8 +22,8 @@
                 1
             ],
             "matrix": [
+                0.0, 0.0,  0.4, 0.0,
                 0.4, 0.0,  0.0, 0.0,
-                0.0, 0.0, -0.4, 0.0,
                 0.0, 0.4,  0.0, 0.0,
                 0.0, 0.0,  0.0, 1.0
             ]
@@ -113,25 +113,7 @@
             ]
         },
         {
-            "mesh": 4,
-            "matrix": [
-                1.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                1.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                1.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                1.0
-            ]
+            "mesh": 4
         }
     ],
     "meshes": [
@@ -215,7 +197,6 @@
         {
             "bufferView": 0,
             "byteOffset": 0,
-            "byteStride": 0,
             "componentType": 5123,
             "count": 12636,
             "max": [
@@ -229,7 +210,6 @@
         {
             "bufferView": 1,
             "byteOffset": 0,
-            "byteStride": 0,
             "componentType": 5126,
             "count": 3031,
             "max": [
@@ -245,9 +225,8 @@
             "type": "VEC3"
         },
         {
-            "bufferView": 1,
+            "bufferView": 2,
             "byteOffset": 36372,
-            "byteStride": 0,
             "componentType": 5126,
             "count": 3031,
             "max": [
@@ -263,9 +242,8 @@
             "type": "VEC3"
         },
         {
-            "bufferView": 1,
+            "bufferView": 3,
             "byteOffset": 72744,
-            "byteStride": 0,
             "componentType": 5126,
             "count": 3031,
             "max": [
@@ -484,6 +462,18 @@
             "byteOffset": 96992,
             "byteLength": 25272,
             "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 96992,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 96992,
+            "target": 34962
         },
         {
             "buffer": 0,
